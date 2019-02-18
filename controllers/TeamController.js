@@ -9,7 +9,7 @@ module.exports = {
         await QueryBuilder.checkId( ctx, next )
     },
     async index( ctx ) {
-        ctx.body = await QueryBuilder.all( TeamMember )
+        ctx.body = await QueryBuilder.all( TeamMember, {} )
     },
     async create( ctx ) {
         ctx.body = await QueryBuilder.create( TeamMember, ctx, {
@@ -30,7 +30,7 @@ module.exports = {
         })
     },
     async fetchOne( ctx ) {
-        ctx.body = await QueryBuilder.fetchOne( TeamMember, ctx.id )
+        ctx.body = await QueryBuilder.fetchOne( TeamMember, ctx )
     },
     async remove( ctx ) {
         ctx.body = await QueryBuilder.remove( TeamMember, ctx )

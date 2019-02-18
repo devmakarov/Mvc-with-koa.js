@@ -9,7 +9,7 @@ module.exports = {
         await QueryBuilder.checkId( ctx, next ) 
     },
     async index ( ctx ) {
-        ctx.body = await QueryBuilder.all( BenefitModel ) 
+        ctx.body = await QueryBuilder.all( BenefitModel, {} ) 
     },
     async create ( ctx ) {
         ctx.body = await QueryBuilder.create( BenefitModel, ctx ) 
@@ -18,7 +18,7 @@ module.exports = {
         ctx.body = await QueryBuilder.update(BenefitModel, ctx, { data: ctx.request.body } )
     },
     async fetchOne ( ctx ) {
-        ctx.body =  await QueryBuilder.fetchOne( BenefitModel, ctx.id )
+        ctx.body =  await QueryBuilder.fetchOne( BenefitModel, ctx )
     },
     async remove( ctx ) {
         ctx.body = await QueryBuilder.remove( BenefitModel, ctx )

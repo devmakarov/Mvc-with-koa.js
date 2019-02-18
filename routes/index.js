@@ -1,16 +1,13 @@
 const combineRoutes = require('koa-combine-routers')
 
-const ContactsRoute = require('./ContactsRoute')
-const SertificationRoute = require('./SertificationRoute')
-const BenefitsRoute = require('./BenefitsRoute')
-const TeamRoute = require('./TeamRoute')
-
-
 const router = combineRoutes(
-    ContactsRoute, 
-    SertificationRoute,
-    BenefitsRoute,
-    TeamRoute
+    require('./ContactsRoute'), 
+    require('./SertificationRoute'),
+    require('./BenefitsRoute'),
+    require('./TeamRoute'),
+    require('./NewsRoute'),
+    require('./ProjectsRoute'),
+    require('./AuthRoute')
 )
 
 exports.init = app => app.use( router() )
