@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <p>{{data}}</p>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.6/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+    <script>
+        new Vue({
+            el: '#app', 
+            data() {
+                return {
+                    data: null
+                }
+            },
+            methods: {
+                async fetch() {
+                    const item = await axios.get('http://localhost:4001/benefits')
+                    this.data = item
+                }
+            },
+            mounted() {
+              this.fetch()
+            }
+        })
+    </script>
+</body>
+</html>

@@ -12,11 +12,11 @@ module.exports = {
     },
     async fetchOne ( model, ctx ) {
         const item = await model.findById( ctx.id )
-        return JSON.stringify( item )
+        return  item 
     },
     async all ( model, data ) {
         const items = await model.find( data )
-        return JSON.stringify( items )
+        return items 
     },
     async create ( model, ctx, request ) {
 
