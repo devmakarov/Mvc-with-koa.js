@@ -1,3 +1,3 @@
-const static = require('koa-static')
+const publcic = require('koa-static')
 
-exports.init = app => app.use(static('public'))
+exports.init = app => app.use(publcic('public'))

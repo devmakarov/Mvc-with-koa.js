@@ -9,7 +9,7 @@ router
     .get('/', BenefitController.index )
     .post('/create', BenefitController.create )
     .get('/:id', BenefitController.checkId, BenefitController.fetchOne )
-    .post('/update/:id', BenefitController.checkId, BenefitController.update )
-    .post('/remove/:id', BenefitController.checkId, BenefitController.remove )
+    .put('/:id', BenefitController.checkId, BenefitController.update )
+    .delete('/:id', BenefitController.checkId, BenefitController.remove )
 
 module.exports = router

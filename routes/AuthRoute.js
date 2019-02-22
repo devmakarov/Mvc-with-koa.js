@@ -1,13 +1,16 @@
 const Router = require('koa-router')
-const passport = require('../libs/passport/index')
+
+const UserModel = require('../models/UserModel') 
 const router = new Router({
     prefix: '/auth'
 })
 
 router
-    .post('/login', passport.authenticate('local', {
-        successRedirect: 'http://rtmp.odessa.ua/admin/main#go',
-        failureRedirect: 'http://rtmp.odessa.ua/login'
-    }))
-
+    .post('/login', async ctx => {
+        const { email, password } = ctx.request.body
+        const user = await UserModel.findOne( { email } )
+        const isValidPassword = await user.checkPassword( password )
+        ctx.body = isValidPassword
+    })
+    
 module.exports = router

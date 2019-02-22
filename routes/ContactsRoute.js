@@ -9,7 +9,7 @@ router
     .get('/', ContactsContoller.index )
     .post('/create', ContactsContoller.create )
     .get('/:id', ContactsContoller.checkId, ContactsContoller.fetchOne)
-    .post('/update/:id', ContactsContoller.checkId, ContactsContoller.update )
-    .post('/remove/:id', ContactsContoller.checkId, ContactsContoller.remove )
+    .put('/:id', ContactsContoller.checkId, ContactsContoller.update )
+    .delete('/:id', ContactsContoller.checkId, ContactsContoller.remove )
 
 module.exports = router

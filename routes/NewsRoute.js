@@ -9,7 +9,7 @@ router
     .get('/', NewsController.all )
     .post('/create', NewsController.create )
     .get('/:id', NewsController.checkId, NewsController.fetchOne )
-    .post('/update/:id', NewsController.checkId, NewsController.update )
-    .post('/remove/:id', NewsController.checkId, NewsController.remove )
+    .put('/:id', NewsController.checkId, NewsController.update )
+    .delete('/:id', NewsController.checkId, NewsController.remove )
 
 module.exports = router
