@@ -1,4 +1,4 @@
-const mongoose = require('../libs/database')
+import mongoose from '../libs/database.mjs'
 
 const Sertification = new mongoose.Schema({
     image: {
@@ -9,4 +9,4 @@ const Sertification = new mongoose.Schema({
         collection: 'Sertifications'
 })
 
-module.exports = mongoose.model( 'Sertification', Sertification )
+export default mongoose.model( 'Sertification', Sertification )

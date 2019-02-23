@@ -1,4 +1,4 @@
-const mongoose = require('../libs/database')
+import mongoose from '../libs/database.mjs'
 
 const Benefit = new mongoose.Schema({
     
@@ -14,4 +14,4 @@ const Benefit = new mongoose.Schema({
     collection: 'Benefits'
 })
 
-module.exports = mongoose.model( 'Benefit', Benefit )
+export default mongoose.model( 'Benefit', Benefit )

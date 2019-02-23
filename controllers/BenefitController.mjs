@@ -1,7 +1,7 @@
-const BenefitModel = require('../models/BenefitModel')
-const QueryBuilder = require('../libs/QueryBuilder')
+import BenefitModel from '../models/BenefitModel'
+import QueryBuilder from '../libs/QueryBuilder'
 
-module.exports = {
+export default  {
 
     QueryBuilder,
 

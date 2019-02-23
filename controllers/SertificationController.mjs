@@ -1,8 +1,8 @@
-const SertificationModel = require('../models/SertificationModel')
-const mongoose = require('../libs/database')
+import SertificationModel from '../models/SertificationModel.mjs'
+import mongoose from '../libs/database'
 
 
-module.exports = {
+export default {
 
     async checkId ( ctx, next ) {
 

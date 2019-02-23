@@ -1,7 +1,7 @@
-const TeamMember = require('../models/TeamMemberModel')
-const QueryBuilder = require('../libs/QueryBuilder')
+import TeamMember from'../models/TeamMemberModel.mjs'
+import QueryBuilder from '../libs/QueryBuilder'
 
-module.exports = {
+export default {
 
     QueryBuilder,
 

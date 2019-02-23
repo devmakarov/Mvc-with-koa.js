@@ -1,9 +1,9 @@
-const Router = require('koa-router')
+import Router from 'koa-router'
 const router = new Router({
     prefix: '/benefits'
 })
 
-const BenefitController = require('../controllers/BenefitController')
+import BenefitController from '../controllers/BenefitController.mjs'
 
 router
     .get('/', BenefitController.index )
@@ -12,4 +12,5 @@ router
     .put('/:id', BenefitController.checkId, BenefitController.update )
     .delete('/:id', BenefitController.checkId, BenefitController.remove )
 
-module.exports = router
+export default router
+ 

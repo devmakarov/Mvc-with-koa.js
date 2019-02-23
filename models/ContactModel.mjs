@@ -1,4 +1,4 @@
-const mongoose = require('../libs/database')
+import mongoose from '../libs/database.mjs'
 
 const Contact = new mongoose.Schema({
 
@@ -17,4 +17,4 @@ const Contact = new mongoose.Schema({
     collection: 'Contacts'
 })
 
-module.exports = mongoose.model( 'Contact', Contact )
+export default mongoose.model( 'Contact', Contact )

@@ -1,9 +1,9 @@
-const Router = require('koa-router')
+import Router from 'koa-router'
 const router = new Router({
     prefix: '/sertification'
 })
 
-const SertificationController = require('../controllers/SertificationController');
+import SertificationController from '../controllers/SertificationController.mjs'
 
 router
     .get('/', SertificationController.all )
@@ -12,4 +12,4 @@ router
     .delete('/:id', SertificationController.checkId, SertificationController.remove )
     .put('/:id', SertificationController.checkId, SertificationController.update )
 
-module.exports = router
+export default router

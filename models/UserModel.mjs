@@ -1,5 +1,5 @@
-const mongoose = require('../libs/database')
-const crypto = require('crypto')
+import mongoose from '../libs/database.mjs'
+import crypto from 'crypto'
 
 const User = new mongoose.Schema({
     email: {
@@ -54,7 +54,5 @@ User.methods.checkPassword = async function checkPassword( password ) {
     return hash === this.passwordHash
 }
 
-
-
-
-module.exports = mongoose.model( 'User', User )
+ 
+export default mongoose.model('User', User)

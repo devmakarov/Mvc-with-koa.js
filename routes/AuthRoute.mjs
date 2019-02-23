@@ -1,6 +1,6 @@
-const Router = require('koa-router')
+import Router from 'koa-router'
 
-const UserModel = require('../models/UserModel') 
+import UserModel from '../models/UserModel'
 const router = new Router({
     prefix: '/auth'
 })
@@ -13,4 +13,4 @@ router
         ctx.body = isValidPassword
     })
     
-module.exports = router
+export default router

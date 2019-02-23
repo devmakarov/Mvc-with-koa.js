@@ -1,9 +1,9 @@
-const Router = require('koa-router')
+import Router from 'koa-router'
 const router = new Router({
     prefix: '/projects'
 })
 
-const ProjectsController = require('../controllers/ProjectsController')
+import ProjectsController from '../controllers/ProjectsController.mjs'
 
 router
     .get('/', ProjectsController.all )
@@ -12,4 +12,4 @@ router
     .put('/:id', ProjectsController.checkId, ProjectsController.update )
     .delete('/:id', ProjectsController.checkId, ProjectsController.remove )
 
-module.exports = router
+export default router

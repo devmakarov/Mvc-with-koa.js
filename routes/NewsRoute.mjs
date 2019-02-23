@@ -1,9 +1,9 @@
-const Router = require('koa-router')
+import Router from 'koa-router'
 const router = new Router({
     prefix: '/news'
 })
 
-const NewsController = require('../controllers/NewsController')
+import NewsController from '../controllers/NewsController'
 
 router
     .get('/', NewsController.all )
@@ -12,4 +12,4 @@ router
     .put('/:id', NewsController.checkId, NewsController.update )
     .delete('/:id', NewsController.checkId, NewsController.remove )
 
-module.exports = router
+export default router

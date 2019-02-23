@@ -1,27 +1,27 @@
-const ResourceModel = require('../models/ResourcesModel')
-const QueryBuilder = require('../libs/QueryBuilder')
+import ResourceModel from '../models/ResourcesModel.mjs'
+import QueryBuilder from '../libs/QueryBuilder'
 
-module.exports = {
+export default {
 
     QueryBuilder,
 
-    async checkId ( ctx, next ) {
+    async checkId( ctx, next ) {
         await QueryBuilder.checkId( ctx, next )
     },
-    async all ( ctx ) {
-        ctx.body = await QueryBuilder.all( ResourceModel, { type: 0 } )
+    async all( ctx ) {
+        ctx.body = await QueryBuilder.all( ResourceModel, { type: 1 } )
     },
-    async create ( ctx ) {
+    async create( ctx ) {
         ctx.body = await QueryBuilder.create( ResourceModel, ctx, {
             data: {
-                image: ctx.request.files.image.name, 
-                title: ctx.request.body.title, 
-                content: ctx.request.body.content, 
+                image: ctx.request.files.image.name,
+                title: ctx.request.body.title,
+                content: ctx.request.body.content,
                 type: ctx.request.body.type
             }
-        } )
+        })
     },
-    async update ( ctx ) {
+    async update( ctx ) {
         ctx.body = await QueryBuilder.update( ResourceModel, ctx, {
             data: {
                 image: ctx.request.files.image.name,
@@ -29,12 +29,12 @@ module.exports = {
                 content: ctx.request.body.content,
                 type: ctx.request.body.type
             }
-        } )
+        })
     },
-    async fetchOne ( ctx ) {
+    async fetchOne( ctx ) {
         ctx.body = await QueryBuilder.fetchOne( ResourceModel, ctx )
     },
-    async remove ( ctx ) {
+    async remove( ctx ) {
         ctx.body = await QueryBuilder.remove( ResourceModel, ctx )
     }
 

@@ -1,7 +1,7 @@
-const LocalStrategy = require('passport-local')
-const User = require('../../models/UserModel')
+import LocalStrategy from 'passport-local'
+import User from '../../models/UserModel.mjs'
 
-module.exports = new LocalStrategy(
+export default new LocalStrategy(
     {
         usernameField: 'email',
         passwordField: 'password',

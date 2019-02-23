@@ -1,7 +1,6 @@
-const bodyParser = require('koa-body')
-const path = require('path')
- 
-exports.init = app => app.use( bodyParser({
+import bodyParser from 'koa-body'
+
+const init = app => app.use( bodyParser({
     formidable: {
         uploadDir:  'public/uploads', // upload directory
         keepExtensions: true // keep file extensions
@@ -9,3 +8,5 @@ exports.init = app => app.use( bodyParser({
     multipart: true,
     urlencoded: true,
 }))
+
+export default { init }

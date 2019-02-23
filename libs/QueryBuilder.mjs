@@ -1,6 +1,6 @@
-const mongoose = require('./database')
+import mongoose from './database.mjs'
 
-module.exports = {
+export default {
 
     async checkId( ctx, next ) {
 

@@ -1,8 +1,8 @@
-const ContactsModel = require('../models/ContactModel')
-const mongoose = require('../libs/database')
+import ContactsModel from '../models/ContactModel'
+import mongoose from '../libs/database'
 
 
-module.exports = {
+export default {
 
     async checkId ( ctx, next ) {
         const id = ctx.params.id

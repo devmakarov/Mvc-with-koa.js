@@ -1,16 +1,16 @@
-const mongoose = require('mongoose')
-const config = require('config');
+import mongoose from 'mongoose'
+import config from 'config'
 
 
 ;( async function () {
     
     try {
         await mongoose.connect(config.get( 'db' ), { useNewUrlParser: true } )
-        console.log('Connected');
+        console.log('Connected')
     } catch ( err ) {
-        console.log( err); 
+        console.log( err)
     } 
     
 })()
 
-module.exports = mongoose;
+export default mongoose

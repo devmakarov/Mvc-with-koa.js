@@ -1,9 +1,9 @@
-const Router = require('koa-router')
+import Router from 'koa-router'
 const router = new Router({
     prefix: '/team'
 })
 
-const TeamController = require('../controllers/TeamController')
+import TeamController from '../controllers/TeamController.mjs'
 
 router
     .get('/', TeamController.index)
@@ -12,4 +12,4 @@ router
     .put('/:id', TeamController.checkId, TeamController.update)
     .delete('/:id', TeamController.checkId, TeamController.remove)
 
-module.exports = router
+export default router

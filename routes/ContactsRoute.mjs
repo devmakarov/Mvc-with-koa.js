@@ -1,9 +1,9 @@
-const Router = require('koa-router')
+import Router from 'koa-router'
 const router = new Router({
     prefix: '/contacts'
 })
 
-const ContactsContoller = require('../controllers/ContactsController')
+import ContactsContoller from '../controllers/ContactsController'
 
 router
     .get('/', ContactsContoller.index )
@@ -12,4 +12,4 @@ router
     .put('/:id', ContactsContoller.checkId, ContactsContoller.update )
     .delete('/:id', ContactsContoller.checkId, ContactsContoller.remove )
 
-module.exports = router
+export default router
